@@ -1,0 +1,283 @@
+/* =========================
+   GLOBAL RESET
+========================= */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f5f7fb;
+}
+
+/* =========================
+   HEADER
+========================= */
+.header {
+    text-align: center;
+    background: white;
+    padding: 25px 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.header h1 {
+    margin: 5px 0;
+    letter-spacing: 2px;
+}
+
+.header h3 {
+    margin: 0;
+    color: #555;
+}
+
+.header p {
+    margin: 0;
+    font-size: 14px;
+    color: #777;
+}
+
+/* =========================
+   MAIN LAYOUT
+========================= */
+.academics-container {
+    display: flex;
+    gap: 25px;
+    margin: 30px;
+}
+
+/* =========================
+   SIDEBAR (PREMIUM)
+========================= */
+.sidebar-academics {
+    width: 260px;
+    background: linear-gradient(180deg, #002147, #004080);
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.sidebar-academics h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    padding-bottom: 10px;
+}
+
+/* Menu */
+.sidebar-academics ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-academics li {
+    padding: 12px 15px;
+    margin: 8px 0;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+/* Hover Effect */
+.sidebar-academics li:hover {
+    background: rgba(255,255,255,0.2);
+    transform: translateX(5px);
+}
+
+/* Active */
+.sidebar-academics li.active {
+    background: #FFD700;
+    color: black;
+    font-weight: 600;
+}
+
+/* =========================
+   CONTENT AREA
+========================= */
+.content {
+    flex: 1;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    animation: fadeIn 0.4s ease;
+}
+
+/* Headings */
+.content h2 {
+    color: #002147;
+    border-bottom: 2px solid #FFD700;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.content h3 {
+    margin-top: 20px;
+}
+
+/* Text */
+.content p {
+    line-height: 1.7;
+    color: #444;
+}
+
+/* List */
+.content ul {
+    padding-left: 20px;
+}
+
+.content li {
+    margin-bottom: 6px;
+}
+
+/* =========================
+   PROFILE CARD
+========================= */
+.profile-card {
+    background: #f9f9f9;
+    padding: 18px;
+    border-left: 5px solid #002147;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* =========================
+   DEPARTMENTS
+========================= */
+.dept {
+    display: none;
+}
+
+.dept.active {
+    display: block;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+@media(max-width: 768px){
+
+    .academics-container {
+        flex-direction: column;
+        margin: 15px;
+    }
+
+    .sidebar-academics {
+        width: 100%;
+    }
+
+    .content {
+        margin-top: 15px;
+    }
+}
+/* =========================
+   PROFILE CARD (PROFESSIONAL LOOK)
+========================= */
+.profile-card {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+/* Image */
+.profile-img img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Info */
+.profile-info h3 {
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.profile-info p {
+    margin: 3px 0;
+    color: #555;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .profile-card {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* =========================
+   DEPARTMENT SECTIONS
+========================= */
+.dept-title {
+    color: #002147;
+    margin-bottom: 30px;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.section {
+    background: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.section h3 {
+    color: #004080;
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.section p {
+    line-height: 1.6;
+    color: #555;
+}
+
+.info-grid {
+    display: grid;
+    gap: 8px;
+}
+
+.career-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.career-list li {
+    background: #f8f9fa;
+    padding: 10px 15px;
+    border-radius: 6px;
+    border-left: 4px solid #3498db;
+    font-weight: 500;
+}
+
+.role {
+    color: #7f8c8d;
+    font-style: italic;
+    margin-bottom: 15px;
+}

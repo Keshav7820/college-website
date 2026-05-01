@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login - Sapkal Knowledge Hub</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* BACKGROUND IMAGE */
+body {
+    height: 100vh;
+    display: flex;
+
+    background: url('https://plus.unsplash.com/premium_photo-1681487916420-8f50a06eb60e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3DD') no-repeat center/cover;
+    position: relative;
+}
+
+/* DARK OVERLAY */
+body::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: 0;
+}
+
+/* LEFT SECTION */
+.left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    z-index: 1;
+    padding: 40px;
+}
+
+.brand {
+    text-align: center;
+}
+
+/* LOGO FIX */
+.brand-logo {
+    width: 140px;        /* main size */
+    max-width: 100%;     /* responsive */
+    height: auto;
+
+    margin-bottom: 15px;
+
+    object-fit: contain;
+
+    transition: 0.4s ease;
+}
+
+/* HOVER EFFECT (premium feel) */
+.brand-logo:hover {
+    transform: scale(1.08);
+}
+
+/* TEXT */
+.brand h1 {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.brand p {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.left h1 {
+    font-size: 34px;
+}
+
+.left p {
+    opacity: 0.8;
+}
+
+/* RIGHT SECTION */
+.right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+/* LOGIN BOX */
+.login-box {
+    width: 360px;
+    padding: 35px;
+
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(20px);
+
+    border-radius: 15px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+
+    animation: slideUp 1s ease;
+}
+
+/* Logo inside form */
+.card-logo {
+    width: 60px;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.login-box h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+}
+
+/* INPUT */
+.input-group {
+    position: relative;
+    margin: 18px 0;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+
+    background: rgba(255,255,255,0.2);
+    color: white;
+}
+
+/* LABEL */
+.input-group label {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: transparent;
+    padding: 0 5px;
+    font-size: 14px;
+    color: #ddd;
+    transition: 0.3s;
+}
+
+/* FLOATING EFFECT */
+.input-group input:focus + label,
+.input-group input:valid + label,
+.input-group select:focus + label,
+.input-group select:valid + label {
+    top: -10px;
+    font-size: 12px;
+    color: #fff;
+}
+
+/* BUTTON */
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 10px;
+
+    background: linear-gradient(to right, #3498db, #5dade2);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    transform: scale(1.05);
+}
+
+/* TEXT */
+.extra {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+    color: white;
+}
+
+.extra a {
+    color: #fff;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* ANIMATIONS */
+@keyframes slideUp {
+    from {opacity: 0; transform: translateY(40px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* MOBILE */
+@media(max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+    .left {
+        display: none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- LEFT -->
+<div class="left">
+    <div class="brand">
+    <img src="https://www.sapkalknowledgehub.org/img/main/logo-dark.png" class="brand-logo">
+    <h1>Sapkal Knowledge Hub</h1>
+    <p>Late G.N. Sapkal College of Engineering</p>
+</div>
+</div>
+
+<!-- RIGHT -->
+<div class="right">
+
+<div class="login-box">
+
+<img src="https://www.lgnscoe.sapkalknowledgehub.org/img/logo.png" class="card-logo">
+
+<h2 id="formTitle">Login</h2>
+
+<!-- LOGIN -->
+<div id="loginForm">
+
+<div class="input-group">
+<input type="text" id="loginUser" required>
+<label>Username</label>
+</div>
+
+<div class="input-group">
+<input type="password" id="loginPass" required>
+<label>Password</label>
+</div>
+
+<div class="input-group">
+<select id="loginRole" required>
+<option value="" disabled selected></option>
+<option value="student">Student</option>
+<option value="faculty">Faculty</option>
+<option value="admin">Admin</option>
+</select>
+<label>Role</label>
+</div>
+
+<button class="login-btn" onclick="login()">LOGIN</button>
+
+<p class="extra">
+Create account? <a onclick="showRegister()">Register</a>
+</p>
+
+</div>
+
+<!-- REGISTER -->
+<div id="registerForm" style="display:none;">
+
+<div class="input-group">
+<input type="text" id="regName" required>
+<label>Full Name</label>
+</div>
+
+<div class="input-group">
+<input type="text" id="regUser" required>
+<label>Username</label>
+</div>
+
+<div class="input-group">
+<input type="password" id="regPass" required>
+<label>Password</label>
+</div>
+
+<div class="input-group">
+<select id="regRole" required>
+<option value="" disabled selected></option>
+<option value="student">Student</option>
+<option value="faculty">Faculty</option>
+<option value="admin">Admin</option>
+</select>
+<label>Role</label>
+</div>
+
+<button class="login-btn" onclick="register()">CREATE ACCOUNT</button>
+
+<p class="extra">
+Already have account? <a onclick="showLogin()">Login</a>
+</p>
+
+</div>
+
+</div>
+</div>
+
+<script>
+function showRegister(){
+document.getElementById("loginForm").style.display="none";
+document.getElementById("registerForm").style.display="block";
+document.getElementById("formTitle").innerText="Register";
+}
+
+function showLogin(){
+document.getElementById("loginForm").style.display="block";
+document.getElementById("registerForm").style.display="none";
+document.getElementById("formTitle").innerText="Login";
+}
+
+function register(){
+let user=document.getElementById("regUser").value;
+let pass=document.getElementById("regPass").value;
+let role=document.getElementById("regRole").value;
+
+if(user===""||pass===""||role===""){alert("Fill all fields");return;}
+
+localStorage.setItem(user,JSON.stringify({password:pass,role:role}));
+
+alert("Account Created");
+showLogin();
+}
+
+function login(){
+let user=document.getElementById("loginUser").value;
+let pass=document.getElementById("loginPass").value;
+let role=document.getElementById("loginRole").value;
+
+let data=localStorage.getItem(user);
+
+if(!data){
+alert("User not found");
+return;
+}
+
+let obj=JSON.parse(data);
+
+if(obj.password===pass && obj.role===role){
+
+    if(role === "student"){
+
+        // 👉 GET STUDENT DATA
+        let studentData = localStorage.getItem("studentData_" + user);
+
+        if(studentData){
+            let s = JSON.parse(studentData);
+
+            document.querySelector(".login-box").innerHTML = `
+                <h2 style="color:white;">Welcome, ${s.name}</h2>
+
+                <p style="color:white;"><b>Roll:</b> ${s.roll}</p>
+                <p style="color:white;"><b>Department:</b> ${s.dept}</p>
+                <p style="color:white;"><b>Marks:</b> ${s.marks}</p>
+                <p style="color:white;"><b>Attendance:</b> ${s.attendance}</p>
+
+                <button class="login-btn" onclick="logout()">LOGOUT</button>
+            `;
+        } else {
+            document.querySelector(".login-box").innerHTML = `
+                <h2 style="color:white;">Welcome, ${user}</h2>
+                <p style="color:white;">No data updated by faculty yet.</p>
+                <button class="login-btn" onclick="logout()">LOGOUT</button>
+            `;
+        }
+
+    }
+
+    else if(role==="faculty"){
+        window.location="faculty.html";
+    }
+    else if(role==="admin"){
+        window.location="admin.html";
+    }
+
+}else{
+alert("Invalid details");
+}
+}
+
+function logout(){
+location.reload();
+}
+</script>
+
+</body>
+</html>

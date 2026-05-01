@@ -1,0 +1,234 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Engineering Admission</title>
+
+<style>
+
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+    position: sticky;
+    top: 0;
+    background: #002147;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 50px;
+    z-index: 1000;
+}
+
+.navbar a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+/* HERO */
+.hero {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: 
+        linear-gradient(rgba(0,33,71,0.7), rgba(0,33,71,0.7)),
+        url('https://www.lgnscoe.sapkalknowledgehub.org/img/gallery/in2.jpg');
+
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+}
+
+.hero button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #ffcc00;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* COURSES */
+.courses {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.course-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.card {
+    width: 250px;
+    padding: 20px;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* INFO */
+.info {
+    background: #f4f4f4;
+    padding: 50px;
+    text-align: center;
+}
+
+/* FORM */
+.form-section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.form {
+    max-width: 400px;
+    margin: auto;
+}
+
+.form input,
+.form select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+}
+
+.form button {
+    width: 100%;
+    padding: 12px;
+    background: #002147;
+    color: white;
+    border: none;
+}
+
+/* CTA */
+.cta {
+    background: #002147;
+    color: white;
+    text-align: center;
+    padding: 50px;
+}
+
+.cta button {
+    margin-top: 15px;
+    padding: 12px 25px;
+    background: #ffcc00;
+    border: none;
+}
+
+/* FOOTER */
+.footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <div><b>LGNSCOE</b></div>
+    <div>
+        <a href="#">Home</a>
+        <a href="#">Courses</a>
+        <a href="#">Admission</a>
+        <a href="#">Contact</a>
+    </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>Admissions Open 2026–27</h1>
+    <p>Late G. N. Sapkal College of Engineering</p>
+    <button>Apply Now</button>
+</section>
+
+<!-- COURSES -->
+<section class="courses">
+    <h2>Our Programs</h2>
+
+    <div class="course-container">
+        <div class="card"><h3>Computer Engineering</h3><p>Intake: 120</p></div>
+        <div class="card"><h3>AI & Data Science</h3><p>Intake: 120</p></div>
+        <div class="card"><h3>Mechanical</h3><p>Intake: 60</p></div>
+        <div class="card"><h3>Civil</h3><p>Intake: 60</p></div>
+        <div class="card"><h3>Electrical</h3><p>Intake: 60</p></div>
+        <div class="card"><h3>E&TC</h3><p>Intake: 60</p></div>
+    </div>
+</section>
+
+<!-- ELIGIBILITY -->
+<section class="info">
+    <h2>Eligibility</h2>
+    <p>12th with Physics & Maths + MHT-CET / JEE</p>
+</section>
+
+<!-- ADMISSION PROCESS -->
+<section class="info">
+    <h2>Admission Process</h2>
+    <p>MHT-CET Registration → Merit List → Choice Filling → Seat Allotment → Admission Confirmation</p>
+</section>
+
+<!-- FORM -->
+<section class="form-section">
+    <h2>Apply Now</h2>
+
+    <form class="form">
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <input type="tel" placeholder="Mobile Number" required>
+
+        <select>
+            <option>Select Course</option>
+            <option>Computer Engineering</option>
+            <option>AI & DS</option>
+            <option>Mechanical</option>
+        </select>
+
+        <button type="submit">Submit Application</button>
+    </form>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+    <h2>Looking for the Best Engineering College?</h2>
+    <button>Call Now</button>
+</section>
+
+<!-- FOOTER -->
+<div class="footer">
+    <p>Kalyani Hills, Nashik | 📞 +91-9049963666</p>
+</div>
+
+</body>
+</html>

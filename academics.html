@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Academics</title>
+
+    <!-- CSS FILE -->
+    <link rel="stylesheet" href="academics.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <h3>Kalyani Charitable Trust's</h3>
+    <h1>SAPKAL KNOWLEDGE HUB</h1>
+    <p>Late G.N. Sapkal College of Engineering, Nashik - 422212</p>
+</header>
+
+<!-- MAIN CONTAINER -->
+<div class="academics-container">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar-academics">
+        <h2>Departments</h2>
+
+        <ul>
+            <li class="active" onclick="showDept(event,'aids')">AI & DS</li>
+            <li onclick="showDept(event,'comp')">Computer Engineering</li>
+            <li onclick="showDept(event,'mech')">Mechanical Engineering</li>
+            <li onclick="showDept(event,'civil')">Civil Engineering</li>
+            <li onclick="showDept(event,'electrical')">Electrical Engineering</li>
+        </ul>
+    </div>
+
+    <!-- CONTENT AREA -->
+    <div class="content">
+
+       <div id="aids" class="dept active">
+
+    <h2 class="dept-title">Artificial Intelligence & Data Science</h2>
+
+    <!-- HOD CARD -->
+    <div class="profile-card">
+
+        <div class="profile-img">
+            <img src="https://www.lgnscoe.sapkalknowledgehub.org/img/seemabaji.jpg" alt="HOD">
+        </div>
+
+        <div class="profile-info">
+            <h3>Prof. S. R. Baji</h3>
+            <p class="role">Head of Department</p>
+
+            <div class="info-grid">
+                <p><b>Qualification:</b> ME (Ph.D Pursuing)</p>
+                <p><b>Experience:</b> 17 Years</p>
+                <p><b>Email:</b> hod.aids@sapkalknowledgehub.org</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- About -->
+    <div class="section">
+        <h3>About Department</h3>
+        <p>
+        The Artificial Intelligence and Data Science department focuses on modern 
+        technologies like Machine Learning, AI, and Data Analytics. It provides 
+        excellent labs and strong industry exposure for students.
+        </p>
+    </div>
+
+    <!-- Careers -->
+    <div class="section">
+        <h3>Career Opportunities</h3>
+        <ul class="career-list">
+            <li>Data Scientist</li>
+            <li>AI Engineer</li>
+            <li>Machine Learning Engineer</li>
+            <li>Software Developer</li>
+            <li>Data Analyst</li>
+        </ul>
+    </div>
+
+</div>
+
+        <!-- COMPUTER -->
+        <div id="comp" class="dept">
+            <h2>Computer Engineering</h2>
+            <p>
+            Focuses on programming, software development, networking and system design.
+            </p>
+        </div>
+
+        <!-- MECHANICAL -->
+        <div id="mech" class="dept">
+            <h2>Mechanical Engineering</h2>
+            <p>
+            Deals with machines, thermal systems, manufacturing and industrial design.
+            </p>
+        </div>
+
+        <!-- CIVIL -->
+        <div id="civil" class="dept">
+            <h2>Civil Engineering</h2>
+            <p>
+            Focuses on construction, infrastructure, roads, bridges and buildings.
+            </p>
+        </div>
+
+        <!-- ELECTRICAL -->
+        <div id="electrical" class="dept">
+            <h2>Electrical Engineering</h2>
+            <p>
+            Deals with power systems, electrical circuits and energy systems.
+            </p>
+        </div>
+
+    </div>
+</div>
+
+<!-- JAVASCRIPT -->
+<script>
+function showDept(e,id){
+    document.querySelectorAll(".dept").forEach(d=>d.classList.remove("active"));
+    document.querySelectorAll(".sidebar-academics li").forEach(li=>li.classList.remove("active"));
+
+    document.getElementById(id).classList.add("active");
+    e.target.classList.add("active");
+}
+</script>
+
+</body>
+</html>
