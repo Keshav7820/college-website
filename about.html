@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About College</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Background animation */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(-45deg, #eef2f3, #ffffff, #dfe9f3, #ffffff);
+    background-size: 400% 400%;
+    animation: bgMove 10s ease infinite;
+    color: #333;
+    padding: 40px 20px;
+}
+
+@keyframes bgMove {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+/* Container */
+.container {
+    max-width: 1000px;
+    margin: auto;
+    background: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    animation: fadeUp 1s ease;
+}
+
+/* Fade animation */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Heading */
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 25px;
+    font-size: 36px;
+    position: relative;
+}
+
+/* Animated underline */
+h1::after {
+    content: "";
+    width: 0;
+    height: 3px;
+    background: #3498db;
+    position: absolute;
+    left: 50%;
+    bottom: -8px;
+    transform: translateX(-50%);
+    animation: lineGrow 1.2s ease forwards;
+}
+
+@keyframes lineGrow {
+    to {
+        width: 120px;
+    }
+}
+
+/* Paragraph */
+p {
+    font-size: 17px;
+    color: #555;
+    text-align: justify;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    animation: fadeUp 1.5s ease;
+}
+
+/* Section title */
+h2 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+    text-align: center;
+}
+
+/* Gallery */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+/* Image card */
+.gallery img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: 0.4s ease;
+    cursor: pointer;
+    animation: fadeUp 1.5s ease;
+}
+
+/* Hover animation */
+.gallery img:hover {
+    transform: scale(1.08) rotate(1deg);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>About College</h1>
+
+    <p>
+        Dr. Ravindra G. Sapkal, Chairman, Kalyanii Charitable Trust, Mumbai, had a splendid vision of providing education and ample opportunities to the children and youth of India to excel globally in different professions...
+    </p>
+
+    <h2>Campus Gallery</h2>
+
+    <div class="gallery">
+        <img src="https://www.lgnscoe.sapkalknowledgehub.org/img/gallery/cl2.jpg">
+        <img src="https://rohandeore.in/wp-content/uploads/2019/01/MAIN-REPLACE-sapkal-compress.png">
+        <img src="https://www.lgnscoe.sapkalknowledgehub.org/img/about3.jpg">
+        <img src="https://www.lgnscoe.sapkalknowledgehub.org/img/gallery/cl11.jpg">
+        <img src="https://assets.allegiance-educare.com/colleges/1611047457SKH%20Ground.jpg">
+        <img src="https://www.lgnscoe.sapkalknowledgehub.org/img/sapkal1.jpg">
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,349 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Animated Background */
+body {
+    background: linear-gradient(-45deg, #eef2f3, #ffffff, #dfe9f3, #ffffff);
+    background-size: 400% 400%;
+    animation: bgMove 12s ease infinite;
+}
+
+@keyframes bgMove {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+/* Topbar */
+.topbar {
+    background: #2c3e50;
+    color: #fff;
+    text-align: center;
+    padding: 8px;
+    animation: fadeDown 1s;
+}
+
+/* Header */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px;
+    background: #fff;
+    animation: fadeDown 1s;
+}
+
+.logo {
+    height: 60px;
+}
+
+/* Navbar */
+nav {
+    background: #3498db;
+    padding: 12px;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+}
+
+/* Underline hover animation */
+nav a::after {
+    content: "";
+    width: 0;
+    height: 2px;
+    background: #000;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Hero */
+.hero {
+    height: 350px;
+    background: url('https://assets.allegiance-educare.com/colleges/1611047457SKH%20Ground.jpg') no-repeat center/cover;
+}
+
+.overlay {
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.overlay h1 {
+    font-size: 34px;
+    animation: slideUp 1s ease;
+}
+
+.overlay h3 {
+    animation: fadeIn 2s ease;
+}
+
+/* Portal */
+.portal {
+    background: white;
+    max-width: 400px;
+    margin: -60px auto 40px;
+    padding: 25px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    border-radius: 12px;
+    text-align: center;
+    animation: floatUp 1s ease;
+}
+
+.portal input, .portal select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+}
+
+.portal button {
+    background: #3498db;
+    color: white;
+    padding: 10px;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.portal button:hover {
+    background: #2c80b4;
+    transform: scale(1.05);
+}
+
+/* ABOUT */
+.about {
+    padding: 80px 20px;
+    background: linear-gradient(to right, #f8fbff, #eef5ff);
+}
+
+.about-container {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* Scroll reveal */
+.hidden {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.8s;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Text */
+.about-text h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.about-text h2::after {
+    content: "";
+    width: 0;
+    height: 3px;
+    background: #3498db;
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    animation: lineGrow 1.2s forwards;
+}
+
+.about-text p {
+    line-height: 1.8;
+}
+
+/* Image */
+.about-img img {
+    width: 100%;
+    max-width: 450px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    transition: 0.4s;
+}
+
+.about-img img:hover {
+    transform: scale(1.07);
+}
+
+/* Animations */
+@keyframes slideUp {
+    from {transform: translateY(50px); opacity: 0;}
+    to {transform: translateY(0); opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes floatUp {
+    from {transform: translateY(80px); opacity: 0;}
+    to {transform: translateY(0); opacity: 1;}
+}
+
+@keyframes fadeDown {
+    from {transform: translateY(-30px); opacity: 0;}
+    to {transform: translateY(0); opacity: 1;}
+}
+
+@keyframes lineGrow {
+    to {width: 120px;}
+}
+
+/* Footer */
+footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=cover&w=1600&q=80') no-repeat center/cover;
+    background-attachment: fixed;
+}
+
+/* HERO */
+.hero {
+    position: relative;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('images/college.jpg') center/cover no-repeat;
+    filter: brightness(0.5);
+    transform: scale(1.1);
+    z-index: -1;
+}
+
+.hero button {
+    padding: 12px 25px;
+    background: #ffcc00;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* COURSES */
+.courses {
+    padding: 50px;
+    text-align: center;
+}
+
+.course-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* CARDS */
+.card {
+    background: white;
+    padding: 20px;
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* INFO */
+.info {
+    background: #f4f4f4;
+    padding: 40px;
+    text-align: center;
+}
+
+/* FORM */
+.form-section {
+    padding: 50px;
+    text-align: center;
+}
+
+.form {
+    max-width: 400px;
+    margin: auto;
+}
+
+.form input,
+.form select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.form button {
+    width: 100%;
+    padding: 12px;
+    background: #002147;
+    color: white;
+    border: none;
+}
+
+/* CONTACT */
+.contact {
+    padding: 40px;
+    text-align: center;
+}
+
+/* CTA */
+.cta {
+    background: #002147;
+    color: white;
+    text-align: center;
+    padding: 40px;
+}
+
+.cta button {
+    background: #ffcc00;
+    padding: 12px 25px;
+    border: none;
+    font-weight: bold;
+}

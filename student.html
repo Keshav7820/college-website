@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Dashboard - SKH</title>
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .dashboard-container { max-width: 800px; margin: 50px auto; padding: 20px; }
+        .info-card { 
+            background: white; 
+            padding: 25px; 
+            border-radius: 12px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+            border-left: 6px solid #002147;
+            margin-bottom: 25px;
+        }
+        .calc-card { 
+            background: white; 
+            padding: 30px; 
+            border-radius: 12px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15); 
+            text-align: center;
+        }
+        .result-box { 
+            margin-top: 20px; 
+            padding: 15px; 
+            border-radius: 8px; 
+            display: none; 
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <h1>STUDENT DASHBOARD</h1>
+    <p>Late G.N. Sapkal College of Engineering,Nashik</p>
+</header>
+
+<div class="dashboard-container">
+    <!-- Student Information Display -->
+    <div class="info-card">
+        <h2 id="showName" style="margin-top:0; color:#002147;">Welcome, Student!</h2>
+        <p><b>Roll Number:</b> <span id="showRoll">N/A</span></p>
+        <p><b>Department:</b> <span id="showDept">N/A</span> | <b>Year:</b> <span id="showYear">N/A</span></p>
+    </div>
+
+    <!-- Input for Attendance & Marks -->
+    <div class="calc-card">
+        <h3>Performance Calculator</h3>
+        <input type="number" id="att" placeholder="Attendance %" style="width:90%; padding:10px; margin:10px;">
+        <input type="number" id="mrks" placeholder="Internal Marks (100)" style="width:90%; padding:10px; margin:10px;">
+        <button onclick="getResult()" style="width:90%; background:#002147; color:white; padding:12px; border:none; cursor:pointer; font-weight:bold;">CHECK GRADE</button>
+
+        <div id="res" class="result-box">
+            <h2 id="gradeRes" style="margin:5px 0;"></h2>
+            <p id="attStat" style="font-weight:bold;"></p>
+        </div>
+    </div>
+</div>
+
+<script>
+    window.onload = function () {
+    const n = localStorage.getItem("userName");
+    const r = localStorage.getItem("userRoll");
+    const d = localStorage.getItem("userDept");
+    const y = localStorage.getItem("userYear");
+
+    if (n) {
+        document.getElementById("showName").innerText = "Welcome, " + n + "!";
+        document.getElementById("showRoll").innerText = r || "N/A";
+        document.getElementById("showDept").innerText = d || "N/A";
+        document.getElementById("showYear").innerText = y || "N/A";
+    } else {
+        alert("No data found! Please fill the portal.");
+        window.location.href = "index.html";
+    }
+};
+
+function getResult() {
+    const a = document.getElementById("att").value;
+    const m = document.getElementById("mrks").value;
+    const resBox = document.getElementById("res");
+
+    if (a === "" || m === "") {
+        alert("Fill all values!");
+        return;
+    }
+
+    let grade = "";
+
+    if (m >= 90) grade = "Grade: O+ (Outstanding)";
+    else if (m >= 75) grade = "Grade: A+ (Excellent)";
+    else if (m >= 40) grade = "Grade: B (Pass)";
+    else grade = "Grade: F (Fail)";
+
+    resBox.style.display = "block";
+    document.getElementById("gradeRes").innerText = grade;
+
+    if (a < 75) {
+        document.getElementById("attStat").innerHTML =
+            "Status: <span style='color:red;'>Low Attendance</span>";
+        resBox.style.background = "#ffdce0";
+    } else {
+        document.getElementById("attStat").innerHTML =
+            "Status: <span style='color:green;'>Sufficient Attendance</span>";
+        resBox.style.background = "#dcf7dc";
+    }
+}
+</script>
+
+</body>
+</html>
